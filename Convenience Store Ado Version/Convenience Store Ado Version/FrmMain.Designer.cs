@@ -1,6 +1,6 @@
 ﻿namespace Convenience_Store_Ado_Version
 {
-    partial class Form1
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.

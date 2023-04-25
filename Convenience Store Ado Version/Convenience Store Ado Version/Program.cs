@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Convenience_Store_Ado_Version.DanhMuc;
 
 namespace Convenience_Store_Ado_Version
 {
@@ -16,7 +17,11 @@ namespace Convenience_Store_Ado_Version
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new FrmMain());
+            //Application.Run(new FrmManuafacture());
+            //Application.Run(new FrmStock());
+            //Application.Run(new FrmType());
+            Application.Run(new FrmSupplier());
         }
     }
 }
