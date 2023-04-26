@@ -46,15 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BS_Layer\BLDetail.cs" />
+    <Compile Include="BS_Layer\BLInvoice.cs" />
     <Compile Include="BS_Layer\BLManuafacture.cs" />
+    <Compile Include="BS_Layer\BLProduct.cs" />
     <Compile Include="BS_Layer\BLStock.cs" />
     <Compile Include="BS_Layer\BLSupplier.cs" />
     <Compile Include="BS_Layer\BLType.cs" />
+    <Compile Include="DanhMuc\FrmDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FrmDetail.Designer.cs">
+      <DependentUpon>FrmDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\FrmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FrmInvoice.Designer.cs">
+      <DependentUpon>FrmInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\FrmManuafacture.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DanhMuc\FrmManuafacture.Designer.cs">
       <DependentUpon>FrmManuafacture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\FrmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FrmProduct.Designer.cs">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\FrmStock.cs">
       <SubType>Form</SubType>
@@ -83,8 +104,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DanhMuc\FrmDetail.resx">
+      <DependentUpon>FrmDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FrmInvoice.resx">
+      <DependentUpon>FrmInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FrmManuafacture.resx">
       <DependentUpon>FrmManuafacture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FrmProduct.resx">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FrmStock.resx">
       <DependentUpon>FrmStock.cs</DependentUpon>
@@ -117,6 +147,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

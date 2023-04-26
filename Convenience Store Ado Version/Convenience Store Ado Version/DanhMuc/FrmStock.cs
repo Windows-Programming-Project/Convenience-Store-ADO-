@@ -57,20 +57,18 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 MessageBox.Show("Không lấy được nội dung trong table STOCK. Lỗi rồi!!!");
             }
         }
-
         private void FrmStock_Load(object sender, EventArgs e)
         {
             LoadData();
         }
-
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadData();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.txtbatchID.Enabled = true;
+            this.txtsID.Enabled = true;
             // Kich hoạt biến Them
             Them = true;
             // Xóa trống các đối tượng trong Panel
@@ -91,7 +89,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             // Đưa con trỏ đến TextField txtbatchID
             this.txtbatchID.Focus();
         }
-
         private void btnFix_Click(object sender, EventArgs e)
         {
             // Kích hoạt biến Sửa
@@ -110,25 +107,18 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.btnBack.Enabled = false;
             // Đưa con trỏ đến TextField txtMaKH
             this.txtbatchID.Enabled = false;
-            this.txtimDate.Focus();
+            this.txtamountofProduct.Focus();
         }
-
         private void dgvSTOCK_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Thứ tự dòng hiện hành
             int r = dgvSTOCK.CurrentCell.RowIndex;
             // Chuyển thông tin lên panel
-            this.txtbatchID.Text =
-            dgvSTOCK.Rows[r].Cells[0].Value.ToString();
-            this.txtimDate.Text =
-            dgvSTOCK.Rows[r].Cells[1].Value.ToString();
-            this.txtamountofProduct.Text =
-            dgvSTOCK.Rows[r].Cells[2].Value.ToString();
-            this.txtsID.Text =
-            dgvSTOCK.Rows[r].Cells[3].Value.ToString();
-
+            this.txtbatchID.Text = dgvSTOCK.Rows[r].Cells[0].Value.ToString();
+            this.txtimDate.Text = dgvSTOCK.Rows[r].Cells[1].Value.ToString();
+            this.txtamountofProduct.Text = dgvSTOCK.Rows[r].Cells[2].Value.ToString();
+            this.txtsID.Text = dgvSTOCK.Rows[r].Cells[3].Value.ToString();
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             // Khai báo biến traloi
@@ -139,12 +129,12 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             // Kiểm tra có nhắp chọn nút Ok không?
             if (traloi == DialogResult.OK) this.Close();
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // Xóa trống các đối tượng trong Panel
             this.txtbatchID.ResetText();
             this.txtimDate.ResetText();
+            this.txtamountofProduct.ResetText();
             this.txtsID.ResetText();
             // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
             this.btnAdd.Enabled = true;
@@ -157,7 +147,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.panel.Enabled = false;
             dgvSTOCK_CellClick(null, null);
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Mở kết nối
@@ -184,7 +173,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 // Thực hiện lệnh
                 BLStock blSto = new BLStock();
                 blSto.UpdateStock(this.txtbatchID.Text, Convert.ToDateTime(this.txtimDate.Text), Convert.ToInt32(this.txtamountofProduct.Text), this.txtsID.Text, ref err);
-
                 // Load lại dữ liệu trên DataGridView
                 LoadData();
                 // Thông báo
@@ -192,7 +180,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             }
             // Đóng kết nối
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -201,8 +188,7 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 // Lấy thứ tự record hiện hành
                 int r = dgvSTOCK.CurrentCell.RowIndex;
                 // Lấy MaKH của record hiện hành
-                string strSTO =
-                dgvSTOCK.Rows[r].Cells[0].Value.ToString();
+                string strSTO1 = dgvSTOCK.Rows[r].Cells[0].Value.ToString();
                 // Viết câu lệnh SQL
                 // Hiện thông báo xác nhận việc xóa mẫu tin
                 // Khai báo biến traloi
@@ -213,7 +199,7 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 // Kiểm tra có nhắp chọn nút Ok không?
                 if (traloi == DialogResult.Yes)
                 {
-                    dbSto.DeleteStock(ref err, strSTO);
+                    dbSto.DeleteStock(ref err, strSTO1);
                     // Cập nhật lại DataGridView
                     LoadData();
                     // Thông báo

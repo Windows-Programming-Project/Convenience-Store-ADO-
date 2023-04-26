@@ -56,17 +56,14 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 MessageBox.Show("Không lấy được nội dung trong table SUPPLIER. Lỗi rồi!!!");
             }
         }
-
         private void FrmSupplier_Load(object sender, EventArgs e)
         {
             LoadData();
         }
-
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadData();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.txtsID.Enabled = true;
@@ -88,7 +85,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             // Đưa con trỏ đến TextField txtsID
             this.txtsID.Focus();
         }
-
         private void btnFix_Click(object sender, EventArgs e)
         {
             // Kích hoạt biến Sửa
@@ -109,7 +105,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.txtsID.Enabled = false;
             this.txtmID.Focus();
         }
-
         private void dgvSUPPLIER_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Thứ tự dòng hiện hành
@@ -122,7 +117,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.txtsName.Text =
             dgvSUPPLIER.Rows[r].Cells[2].Value.ToString();
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             // Khai báo biến traloi
@@ -133,7 +127,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             // Kiểm tra có nhắp chọn nút Ok không?
             if (traloi == DialogResult.OK) this.Close();
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // Xóa trống các đối tượng trong Panel
@@ -150,7 +143,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.panel.Enabled = false;
             dgvSUPPLIER_CellClick(null, null);
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Mở kết nối
@@ -185,7 +177,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             }
             // Đóng kết nối
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -194,8 +185,8 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 // Lấy thứ tự record hiện hành
                 int r = dgvSUPPLIER.CurrentCell.RowIndex;
                 // Lấy MaKH của record hiện hành
-                string strSUP =
-                dgvSUPPLIER.Rows[r].Cells[0].Value.ToString();
+                string strSUP1 = dgvSUPPLIER.Rows[r].Cells[0].Value.ToString();
+                string strSUP2 = dgvSUPPLIER.Rows[r].Cells[1].Value.ToString();
                 // Viết câu lệnh SQL
                 // Hiện thông báo xác nhận việc xóa mẫu tin
                 // Khai báo biến traloi
@@ -206,7 +197,7 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 // Kiểm tra có nhắp chọn nút Ok không?
                 if (traloi == DialogResult.Yes)
                 {
-                    dbSUP.DeleteSupplier(ref err, strSUP);
+                    dbSUP.DeleteSupplier(ref err, strSUP1, strSUP2);
                     // Cập nhật lại DataGridView
                     LoadData();
                     // Thông báo

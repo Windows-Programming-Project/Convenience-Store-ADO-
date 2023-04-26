@@ -27,9 +27,9 @@ namespace Convenience_Store_Ado_Version.BS_Layer
             sName + "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool DeleteSupplier(ref string err, string sID)
+        public bool DeleteSupplier(ref string err, string sID, string mID)
         {
-            string sqlString = "Delete From Supplier Where sID='" + sID + "'";
+            string sqlString = "Delete From Supplier Where sID=N'" + sID + "' AND mID=N'" + mID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool UpdateSupplier(string sID, string mID, string sName, ref string err)

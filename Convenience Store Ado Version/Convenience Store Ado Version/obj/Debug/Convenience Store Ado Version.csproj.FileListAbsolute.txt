@@ -12,3 +12,6 @@ D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience 
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmStock.resources
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmType.resources
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmSupplier.resources
+D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmDetail.resources
+D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmInvoice.resources
+D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmProduct.resources
