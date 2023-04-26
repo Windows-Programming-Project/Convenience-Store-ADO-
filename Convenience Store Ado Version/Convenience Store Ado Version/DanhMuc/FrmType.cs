@@ -55,17 +55,14 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 MessageBox.Show("Không lấy được nội dung trong table TYPE. Lỗi rồi!!!");
             }
         }
-
         private void FrmType_Load(object sender, EventArgs e)
         {
             LoadData();
         }
-
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadData();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.txttID.Enabled = true;
@@ -86,7 +83,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             // Đưa con trỏ đến TextField txttID
             this.txttID.Focus();
         }
-
         private void btnFix_Click(object sender, EventArgs e)
         {
             // Kích hoạt biến Sửa
@@ -107,18 +103,14 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.txttID.Enabled = false;
             this.txttName.Focus();
         }
-
         private void dgvTYPE_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Thứ tự dòng hiện hành
             int r = dgvTYPE.CurrentCell.RowIndex;
             // Chuyển thông tin lên panel
-            this.txttID.Text =
-            dgvTYPE.Rows[r].Cells[0].Value.ToString();
-            this.txttName.Text =
-            dgvTYPE.Rows[r].Cells[1].Value.ToString();
+            this.txttID.Text = dgvTYPE.Rows[r].Cells[0].Value.ToString();
+            this.txttName.Text = dgvTYPE.Rows[r].Cells[1].Value.ToString();
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             // Khai báo biến traloi
@@ -129,7 +121,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             // Kiểm tra có nhắp chọn nút Ok không?
             if (traloi == DialogResult.OK) this.Close();
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // Xóa trống các đối tượng trong Panel
@@ -146,7 +137,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.panel.Enabled = false;
             dgvTYPE_CellClick(null, null);
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Mở kết nối
@@ -181,7 +171,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             }
             // Đóng kết nối
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try

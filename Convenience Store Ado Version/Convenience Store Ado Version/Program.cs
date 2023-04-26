@@ -21,7 +21,9 @@ namespace Convenience_Store_Ado_Version
             //Application.Run(new FrmManuafacture());
             //Application.Run(new FrmStock());
             //Application.Run(new FrmType());
-            Application.Run(new FrmSupplier());
+            // Application.Run(new FrmSupplier());
+            Application.Run(new FrmDetail());
+
         }
     }
 }
