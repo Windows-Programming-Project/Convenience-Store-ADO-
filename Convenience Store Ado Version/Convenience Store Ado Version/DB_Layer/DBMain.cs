@@ -10,7 +10,7 @@ namespace Convenience_Store_Ado_Version.DB_Layer
 {
     class DBMain
     {
-        string ConnStr = "Data Source=DESKTOP-P5RFVBG;Initial Catalog=ConvenienceStore;Integrated Security=True";
+        string ConnStr = "Data Source=CAO;Initial Catalog=ConvenienceStore;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;
