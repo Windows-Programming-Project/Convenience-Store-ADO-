@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -62,27 +63,100 @@ namespace Convenience_Store_Ado_Version.DanhMuc
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-
+            
+            if (Add)
+            {
+                try
+                {
+                    BLCustomer blCTM = new BLCustomer();
+                    blCTM.AddCustomer(txtIDCustomer.Text,txtNameCustomer.Text, Int32.Parse(txtTotalPayCustomer.Text),txtPhoneCustomer.Text, ref err);           // Load lại dữ liệu trên DataGridView 
+                    LoadDataCustomer();
+                    // Thông báo 
+                    MessageBox.Show("Add Successfully!");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Error Adding EMP!");
+                }
+            }
+            else
+            {
+                BLCustomer blCTM = new BLCustomer();
+                BLEmployee blemp = new BLEmployee();
+                blCTM.AddCustomer(txtIDCustomer.Text, txtNameCustomer.Text, Int32.Parse(txtTotalPayCustomer.Text), txtPhoneCustomer.Text, ref err);
+            }
+            LoadDataCustomer();
+            MessageBox.Show("Successfully!");
         }
 
         private void btnChangedCustomer_Click(object sender, EventArgs e)
         {
 
+            if (Add)
+            {
+                try
+                {
+                    BLCustomer blCTM = new BLCustomer();
+                    blCTM.UpdateCustomer(txtIDCustomer.Text, txtNameCustomer.Text, Int32.Parse(txtTotalPayCustomer.Text), txtPhoneCustomer.Text, ref err);           // Load lại dữ liệu trên DataGridView 
+                    LoadDataCustomer();
+                    // Thông báo 
+                    MessageBox.Show("Update Successfully!");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Error Updating EMP!");
+                }
+            }
+            else
+            {
+                BLCustomer blCTM = new BLCustomer();
+                BLEmployee blemp = new BLEmployee();
+                blCTM.UpdateCustomer(txtIDCustomer.Text, txtNameCustomer.Text, Int32.Parse(txtTotalPayCustomer.Text), txtPhoneCustomer.Text, ref err);
+            }
+            LoadDataCustomer();
+            MessageBox.Show("Successfully!");
         }
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
 
+            if (Add)
+            {
+                try
+                {
+                    BLCustomer blCTM = new BLCustomer();
+                    blCTM.DeleteCustomer(txtIDCustomer.Text, ref err);           // Load lại dữ liệu trên DataGridView 
+                    LoadDataCustomer();
+                    // Thông báo 
+                    MessageBox.Show("Delete Successfully!");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Error Delete EMP!");
+                }
+            }
+            else
+            {
+                BLCustomer blCTM = new BLCustomer();
+                BLEmployee blemp = new BLEmployee();
+                blCTM.DeleteCustomer(txtIDCustomer.Text, ref err);
+            }
+            LoadDataCustomer();
+            MessageBox.Show("Successfully!");
         }
 
         private void btnReloadCustomer_Click(object sender, EventArgs e)
         {
-
+            LoadDataCustomer();
         }
 
         private void btnExitCustomer_Click(object sender, EventArgs e)
         {
-
+            DialogResult answear;
+            answear = MessageBox.Show("are you sure?", "Trả lời",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (answear == DialogResult.OK)
+                Close();
         }
         #endregion
         

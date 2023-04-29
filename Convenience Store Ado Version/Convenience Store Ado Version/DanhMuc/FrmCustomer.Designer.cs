@@ -198,7 +198,7 @@
             this.Controls.Add(this.txtIDCustomer);
             this.Controls.Add(this.panel1);
             this.Name = "FrmCustomer";
-            this.Text = "FrmAccount";
+            this.Text = "FrmCustomer";
             this.Load += new System.EventHandler(this.FrmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);

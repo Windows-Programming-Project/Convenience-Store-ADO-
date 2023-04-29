@@ -23,7 +23,8 @@ namespace Convenience_Store_Ado_Version
             //Application.Run(new FrmType());
             // Application.Run(new FrmSupplier());
             //Application.Run(new FrmEmployee());
-            Application.Run(new FrmCustomer());
+            //Application.Run(new FrmCustomer());
+            Application.Run(new FrmAccount());
 
 
         }

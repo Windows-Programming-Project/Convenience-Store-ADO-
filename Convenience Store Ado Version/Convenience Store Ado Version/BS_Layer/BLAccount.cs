@@ -17,40 +17,35 @@ namespace Convenience_Store_Ado_Version.BS_Layer
         }
         public DataSet TakeAccount()
         {
-            return db.ExecuteQueryDataSet("select * from Employee", CommandType.Text);
+            return db.ExecuteQueryDataSet("select * from Account", CommandType.Text);
         }
-        public bool AddEmployee(string EID, string EName, DateTime EDateOfBirth, int EGender, string EPhone, string EAddress, string EPosition, float ESalary, ref string err)
+        public bool AddAccount(string aUsername, string aPassword, string eID, string aEmail, int Active, ref string err)
         {
-            string sqlString = "Insert Into Employee Values(" + "N'" +
-            EID + "',N'" +
-            EName + "','" +
-            EDateOfBirth + "'," +
-            EGender + ",N'" +
-            EPhone + "',N'" +
-            EAddress + "',N'" +
-            EPosition + "','" +
-            ESalary +
-            "')";
+            string sqlString = "INSERT INTO Account (aUsername, aPassword, eID, aEmail, Active) VALUES (N'" +
+                                aUsername + "', N'" +
+                                aPassword + "', N'" +
+                                eID + "', N'" +
+                                aEmail + "', " +
+                                Active.ToString() + ")";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool UpdateEmployee(string EID, string EName, DateTime EDateOfBirth, int EGender, string EPhone, string EAddress, string EPosition, float ESalary, ref string err)
+        public bool UpdateAccount(string aUsername, string aPassword, string eID, string aEmail, int Active, ref string err)
         {
-            string sqlString = "UPDATE Employee SET " +
-                               "eName = N'" + EName + "', " +
-                               "eBirthdate = '" + EDateOfBirth + "', " +
-                               "eGender = " + EGender + ", " +
-                               "ePhone = N'" + EPhone + "', " +
-                               "eAddress = N'" + EAddress + "', " +
-                               "ePosition = N'" + EPosition + "', " +
-                               "eSalary = " + ESalary.ToString() + " " +
-                               "WHERE eID = N'" + EID + "'";
+            string sqlString = "UPDATE Account SET " +
+                               "aPassword = '" + aPassword + "', " +
+                               "eID = '" + eID + "', " +
+                               "aEmail = '" + aEmail + "', " +
+                               "Active = " + Active +
+                               " WHERE aUsername = '" + aUsername + "';";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool DeleteEmployee(string EID, ref string err)
+
+        public bool DeleteAccount(string aUsername, ref string err)
         {
-            string sqlString = "DELETE FROM Employee WHERE eID = N'" + EID + "'";
+            string sqlString = "DELETE FROM Account WHERE aUsername = '" + aUsername + "';";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+
 
     }
 }

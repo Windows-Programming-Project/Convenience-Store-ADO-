@@ -33,12 +33,12 @@ namespace Convenience_Store_Ado_Version.BS_Layer
         {
             string sqlString = "UPDATE Customer SET " +
                                "cName = N'" + cName + "', " +
-                               "cTotalpay = '" +TotalPay + "', " +
-                               "cPhoneNum = N'" + cPhone + "', " +
-                               "WHERE cID = N'" + cID + "'";
+                               "cTotalpay = " +TotalPay + ", " +
+                               "cPhoneNum = N'" + cPhone + "' " +
+                               "WHERE cID = N'" + cID + "';";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool DeleteEmployee(string cID, ref string err)
+        public bool DeleteCustomer(string cID, ref string err)
         {
             string sqlString = "DELETE FROM Customer WHERE cID = N'" + cID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
