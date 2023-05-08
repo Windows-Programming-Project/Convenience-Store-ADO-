@@ -34,8 +34,17 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 // Đưa dữ liệu lên DataGridView
                 dgvSTOCK.DataSource = dtTy;
                 // Thay đổi độ rộng cột
-                dgvSTOCK.AutoResizeColumns();
-                // Xóa trống các đối tượng trong Panel
+                DataGridViewCellStyle newStyle = new DataGridViewCellStyle();
+                newStyle.Font = new Font("Arial", 12, FontStyle.Regular);
+                dgvSTOCK.DefaultCellStyle = newStyle;
+                DataGridViewCellStyle headerStyle = new DataGridViewCellStyle();
+                headerStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+                headerStyle.ForeColor = Color.Red;
+                foreach (DataGridViewColumn column in dgvSTOCK.Columns)
+                {
+                    column.HeaderCell.Style = headerStyle;
+                }
+                dgvSTOCK.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 this.txtbatchID.ResetText();
                 this.txtimDate.ResetText();
                 this.txtamountofProduct.ResetText();

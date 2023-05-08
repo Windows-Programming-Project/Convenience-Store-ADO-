@@ -53,9 +53,5 @@ namespace Convenience_Store_Ado_Version.BS_Layer
             string sqlString = "DELETE FROM Employee WHERE eID = N'" + EID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-
-
     }
-
-
 }
