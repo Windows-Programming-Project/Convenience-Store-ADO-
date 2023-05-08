@@ -25,7 +25,7 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             InitializeComponent();
         }
        void LoadDataAccount()
-        {
+       {
             try
             {
                 tbACC = new DataTable();
@@ -34,15 +34,25 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 tbACC = dataSet.Tables[0];
                 // push on data GRV
                 dgvAccount.DataSource = tbACC;
-                // chang size table
-                dgvAccount.AutoResizeColumns();
+
+                DataGridViewCellStyle newStyle = new DataGridViewCellStyle();
+                newStyle.Font = new Font("Arial", 12, FontStyle.Regular);
+                dgvAccount.DefaultCellStyle = newStyle;
+                DataGridViewCellStyle headerStyle = new DataGridViewCellStyle();
+                headerStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+                headerStyle.ForeColor = Color.Red;
+                foreach (DataGridViewColumn column in dgvAccount.Columns)
+                {
+                    column.HeaderCell.Style = headerStyle;
+                }
+                dgvAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 //
                 dgvAccount_CellContentClick(null, null);
                 Add = true;
             }
             catch
             {
-                MessageBox.Show("Dose not take Data. Eror!!!");
+                MessageBox.Show("Does not take Data. Eror!!!");
             }
         }
 

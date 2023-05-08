@@ -33,8 +33,17 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 dtSup = ds.Tables[0];
                 // Đưa dữ liệu lên DataGridView
                 dgvSUPPLIER.DataSource = dtSup;
-                // Thay đổi độ rộng cột
-                dgvSUPPLIER.AutoResizeColumns();
+                DataGridViewCellStyle newStyle = new DataGridViewCellStyle();
+                newStyle.Font = new Font("Arial", 12, FontStyle.Regular);
+                dgvSUPPLIER.DefaultCellStyle = newStyle;
+                DataGridViewCellStyle headerStyle = new DataGridViewCellStyle();
+                headerStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+                headerStyle.ForeColor = Color.Red;
+                foreach (DataGridViewColumn column in dgvSUPPLIER.Columns)
+                {
+                    column.HeaderCell.Style = headerStyle;
+                }
+                dgvSUPPLIER.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 // Xóa trống các đối tượng trong Panel
                 this.txtsID.ResetText();
                 this.txtmID.ResetText();

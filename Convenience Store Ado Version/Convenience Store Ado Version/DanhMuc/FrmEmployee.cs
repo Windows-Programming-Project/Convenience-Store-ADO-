@@ -36,8 +36,17 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 tbEMP = dataSet.Tables[0];
                 // push on data GRV
                 dgvEMPLOYEE.DataSource = tbEMP;
-                // chang size table
-                dgvEMPLOYEE.AutoResizeColumns();
+                DataGridViewCellStyle newStyle = new DataGridViewCellStyle();
+                newStyle.Font = new Font("Arial", 12, FontStyle.Regular);
+                dgvEMPLOYEE.DefaultCellStyle = newStyle;
+                DataGridViewCellStyle headerStyle = new DataGridViewCellStyle();
+                headerStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+                headerStyle.ForeColor = Color.Red;
+                foreach (DataGridViewColumn column in dgvEMPLOYEE.Columns)
+                {
+                    column.HeaderCell.Style = headerStyle;
+                }
+                dgvEMPLOYEE.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 //
                 dgvEMPLOYEE_CellContentClick(null, null);
                 Add = true;

@@ -35,8 +35,17 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 tbCTM = dataSet.Tables[0];
                 // push on data GRV
                 dgvCustomer.DataSource = tbCTM;
-                // chang size table
-                dgvCustomer.AutoResizeColumns();
+                DataGridViewCellStyle newStyle = new DataGridViewCellStyle();
+                newStyle.Font = new Font("Arial", 12, FontStyle.Regular);
+                dgvCustomer.DefaultCellStyle = newStyle;
+                DataGridViewCellStyle headerStyle = new DataGridViewCellStyle();
+                headerStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+                headerStyle.ForeColor = Color.Red;
+                foreach (DataGridViewColumn column in dgvCustomer.Columns)
+                {
+                    column.HeaderCell.Style = headerStyle;
+                }
+                dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 //
                 dgvCustomer_CellContentClick(null, null);
                 Add = true;
@@ -158,7 +167,11 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             if (answear == DialogResult.OK)
                 Close();
         }
+
+        public static implicit operator FrmCustomer(FrmAccount v)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
-        
     }
 }
