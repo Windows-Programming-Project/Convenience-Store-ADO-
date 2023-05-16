@@ -47,9 +47,27 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                     column.HeaderCell.Style = headerStyle;
                 }
                 dgvEMPLOYEE.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                //
-                dgvEMPLOYEE_CellContentClick(null, null);
-                Add = true;
+                // Xóa trống các đối tượng trong Panel
+                txtIDEmployee.ResetText();
+                txtNameEMP.ResetText();
+                txtDateofBirthEMP.ResetText();
+                txtGenderEMP.ResetText();
+                txtPhoneEMP.ResetText();
+                txtAddEMP.ResetText();
+                txtPosition.ResetText();
+                txtSalaryEMP.ResetText();
+                txtUsername.ResetText();
+                txtPassword.ResetText();
+                // Không cho thao tác trên các nút Lưu / Hủy
+                this.btnSave.Enabled = false;
+                this.btnCancel.Enabled = false;
+                this.panel.Enabled = false;
+                // Cho thao tác trên các nút Thêm / Sửa / Xóa /Thoát
+                this.btnAdd.Enabled = true;
+                this.btnUpdate.Enabled = true;
+                this.btnDelete.Enabled = true;
+                this.btnExit.Enabled = true;
+                dgvEMPLOYEE_CellClick(null, null);
             }
             catch
             {
@@ -60,61 +78,8 @@ namespace Convenience_Store_Ado_Version.DanhMuc
         {
             LoadDataEMP();
         }
-        private void dgvEMPLOYEE_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int r = dgvEMPLOYEE.CurrentCell.RowIndex;
-            txtIDEmployee.Text = dgvEMPLOYEE.Rows[r].Cells[0].Value.ToString();
-            txtNameEMP.Text = dgvEMPLOYEE.Rows[r].Cells[1].Value.ToString();
-            txtDateofBirthEMP.Text = dgvEMPLOYEE.Rows[r].Cells[2].Value.ToString();
-            txtGenderEMP.Text = dgvEMPLOYEE.Rows[r].Cells[3].Value.ToString();
-            txtPhoneEMP.Text = dgvEMPLOYEE.Rows[r].Cells[4].Value.ToString();
-            txtAddEMP.Text = dgvEMPLOYEE.Rows[r].Cells[5].Value.ToString();
-            txtPosition.Text = dgvEMPLOYEE.Rows[r].Cells[6].Value.ToString();
-            txtSalaryEMP.Text = dgvEMPLOYEE.Rows[r].Cells[7].Value.ToString();
-        }
-        #region Button EMP
-        private void btnAddEMP_Click(object sender, EventArgs e)
-        {
-            int gender = 0;
-            if (Add)
-            {
-                
-                try
-                {
-                    BLEmployee blEMP = new BLEmployee();
-                   
-                    if (txtGenderEMP.Text == "True")
-                    {
-                        gender = 1;
-                    }
-                    blEMP.AddEmployee(txtIDEmployee.Text,txtNameEMP.Text, DateTime.Parse(this.txtDateofBirthEMP.Text), gender, txtPhoneEMP.Text, txtAddEMP.Text, txtPosition.Text, Int32.Parse(txtSalaryEMP.Text), ref err);           // Load lại dữ liệu trên DataGridView 
-                    LoadDataEMP();
-                    // Thông báo 
-                    MessageBox.Show("Add Successfully!");
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Error Adding EMP!");
-                }
-            }
-            else
-            {
-                // Thực hiện lệnh 
-                BLEmployee blemp = new BLEmployee();
-                if (txtGenderEMP.Text == "True")
-                {
-                    gender = 1;
-                }
-                blemp.AddEmployee(txtIDEmployee.Text, txtNameEMP.Text, DateTime.Parse(this.txtDateofBirthEMP.Text), gender, txtPhoneEMP.Text, txtAddEMP.Text, txtPosition.Text, Int32.Parse(txtSalaryEMP.Text), ref err);           // Load lại dữ liệu trên DataGridView 
-
-            }
-            // Load lại dữ liệu trên DataGridView 
-            LoadDataEMP();
-            // Thông báo 
-            MessageBox.Show("Successfully!");
-        }
-
-        private void btnChanged_Click(object sender, EventArgs e)
+        #region Button
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             int gender = 0;
             if (Add)
@@ -127,7 +92,7 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                     {
                         gender = 1;
                     }
-                    bool isSuccess = blemp.UpdateEmployee(txtIDEmployee.Text, txtNameEMP.Text, DateTime.Parse(this.txtDateofBirthEMP.Text), gender, txtPhoneEMP.Text, txtAddEMP.Text, txtPosition.Text, Int32.Parse(txtSalaryEMP.Text), ref err);           // Load lại dữ liệu trên DataGridView 
+                    bool isSuccess = blemp.UpdateEmployee(txtIDEmployee.Text, txtNameEMP.Text, DateTime.Parse(this.txtDateofBirthEMP.Text), gender, txtPhoneEMP.Text, txtAddEMP.Text, txtPosition.Text, Int32.Parse(txtSalaryEMP.Text),txtUsername.Text,txtPassword.Text, ref err);           // Load lại dữ liệu trên DataGridView 
 
                     if (isSuccess)
                     {
@@ -153,7 +118,7 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 {
                     gender = 1;
                 }
-                blemp.UpdateEmployee(txtIDEmployee.Text, txtNameEMP.Text, DateTime.Parse(this.txtDateofBirthEMP.Text), gender, txtPhoneEMP.Text, txtAddEMP.Text, txtPosition.Text, Int32.Parse(txtSalaryEMP.Text), ref err);    
+                blemp.UpdateEmployee(txtIDEmployee.Text, txtNameEMP.Text, DateTime.Parse(this.txtDateofBirthEMP.Text), gender, txtPhoneEMP.Text, txtAddEMP.Text, txtPosition.Text, Int32.Parse(txtSalaryEMP.Text),txtUsername.Text,txtPassword.Text, ref err);    
                 
             }
             // Load lại dữ liệu trên DataGridView 
@@ -161,65 +126,169 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             // Thông báo 
             MessageBox.Show("Update Successfully!");
         }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.txtIDEmployee.Enabled = true;
+            // Kich hoạt biến Them
+            Add = true;
+            // Xóa trống các đối tượng trong Panel
+            txtIDEmployee.ResetText();
+            txtNameEMP.ResetText();
+            txtDateofBirthEMP.ResetText();
+            txtGenderEMP.ResetText();
+            txtPhoneEMP.ResetText();
+            txtAddEMP.ResetText();
+            txtPosition.ResetText();
+            txtSalaryEMP.ResetText();
+            txtUsername.ResetText();
+            txtPassword.ResetText();
 
-        private void btnDeleteEMP_Click(object sender, EventArgs e)
+            // Cho thao tác trên các nút Lưu / Hủy / Panel
+            this.btnSave.Enabled = true;
+            this.btnCancel.Enabled = true;
+            this.panel.Enabled = true;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát
+            this.btnAdd.Enabled = false;
+            this.btnUpdate.Enabled = false;
+            this.btnDelete.Enabled = false;
+            this.btnExit.Enabled = false;
+            // Đưa con trỏ đến TextField txtbatchID
+            this.txtIDEmployee.Focus();
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            // Kích hoạt biến Sửa
+            Add = false;
+            // Cho phép thao tác trên Panel
+            this.panel.Enabled = true;
+            dgvEMPLOYEE_CellClick(null, null);
+
+            // Cho thao tác trên các nút Lưu / Hủy / Panel
+            this.btnSave.Enabled = true;
+            this.btnCancel.Enabled = true;
+            this.panel.Enabled = true;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát
+            this.btnAdd.Enabled = false;
+            this.btnUpdate.Enabled = false;
+            this.btnDelete.Enabled = false;
+            this.btnExit.Enabled = false;
+            // Đưa con trỏ đến TextField txtMaKH
+            this.txtIDEmployee.Enabled = false;
+            this.txtNameEMP.Focus();
+        }
+
+        private void dgvEMPLOYEE_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dgvEMPLOYEE.CurrentCell.RowIndex;
+            txtIDEmployee.Text = dgvEMPLOYEE.Rows[r].Cells[0].Value.ToString();
+            txtNameEMP.Text = dgvEMPLOYEE.Rows[r].Cells[1].Value.ToString();
+            txtDateofBirthEMP.Text = dgvEMPLOYEE.Rows[r].Cells[2].Value.ToString();
+            txtGenderEMP.Text = dgvEMPLOYEE.Rows[r].Cells[3].Value.ToString();
+            txtPhoneEMP.Text = dgvEMPLOYEE.Rows[r].Cells[4].Value.ToString();
+            txtAddEMP.Text = dgvEMPLOYEE.Rows[r].Cells[5].Value.ToString();
+            txtPosition.Text = dgvEMPLOYEE.Rows[r].Cells[6].Value.ToString();
+            txtSalaryEMP.Text = dgvEMPLOYEE.Rows[r].Cells[7].Value.ToString();
+            txtUsername.Text = dgvEMPLOYEE.Rows[r].Cells[8].Value.ToString();
+            txtPassword.Text = dgvEMPLOYEE.Rows[r].Cells[9].Value.ToString();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            // Xóa trống các đối tượng trong Panel
+            txtIDEmployee.ResetText();
+            txtNameEMP.ResetText();
+            txtDateofBirthEMP.ResetText();
+            txtGenderEMP.ResetText();
+            txtPhoneEMP.ResetText();
+            txtAddEMP.ResetText();
+            txtPosition.ResetText();
+            txtSalaryEMP.ResetText();
+            txtUsername.ResetText();
+            txtPassword.ResetText();
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
+            this.btnAdd.Enabled = true;
+            this.btnUpdate.Enabled = true;
+            this.btnDelete.Enabled = true;
+            this.btnExit.Enabled = true;
+            // Không cho thao tác trên các nút Lưu / Hủy / Panel
+            this.btnSave.Enabled = false;
+            this.btnCancel.Enabled = false;
+            this.panel.Enabled = false;
+            dgvEMPLOYEE_CellClick(null, null);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
             int gender = 0;
             if (Add)
             {
+
                 try
                 {
-
-                    BLEmployee blemp = new BLEmployee();
+                    BLEmployee blEMP = new BLEmployee();
                     if (txtGenderEMP.Text == "True")
                     {
                         gender = 1;
                     }
-                    bool isSuccess = blemp.DeleteEmployee(txtIDEmployee.Text, ref err);
-
-                    if (isSuccess)
-                    {
-                        MessageBox.Show("Employee delete successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Error delete employee: {err}");
-                    }
+                    blEMP.AddEmployee(txtIDEmployee.Text, txtNameEMP.Text, DateTime.Parse(this.txtDateofBirthEMP.Text), gender, txtPhoneEMP.Text, txtAddEMP.Text, txtPosition.Text, Int32.Parse(txtSalaryEMP.Text), txtUsername.Text, txtPassword.Text, ref err);
                     LoadDataEMP();
-
+                    MessageBox.Show("Add Successfully!");
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("Error delete!");
+                    MessageBox.Show("Error Adding EMP!");
                 }
             }
             else
             {
-
                 BLEmployee blemp = new BLEmployee();
                 if (txtGenderEMP.Text == "True")
                 {
                     gender = 1;
                 }
-                blemp.DeleteEmployee(txtIDEmployee.Text, ref err);
+                blemp.UpdateEmployee(txtIDEmployee.Text, txtNameEMP.Text, DateTime.Parse(this.txtDateofBirthEMP.Text), gender, txtPhoneEMP.Text, txtAddEMP.Text, txtPosition.Text, Int32.Parse(txtSalaryEMP.Text), txtUsername.Text, txtPassword.Text, ref err);
+                LoadDataEMP();
+                MessageBox.Show("Update successfully!");
             }
-            // Load lại dữ liệu trên DataGridView 
-            LoadDataEMP();
-            // Thông báo 
-            MessageBox.Show("Delete Successfully!");
         }
 
-        private void btSaveEMP_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int r = dgvEMPLOYEE.CurrentCell.RowIndex;
+                string strEM = dgvEMPLOYEE.Rows[r].Cells[0].Value.ToString();
+                // Viết câu lệnh SQL
+                // Hiện thông báo xác nhận việc xóa mẫu tin
+                // Khai báo biến traloi
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp
+                traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhắp chọn nút Ok không?
+                if (traloi == DialogResult.Yes)
+                {
+                    dbEmployee.DeleteEmployee(strEM,ref err);
+                    // Cập nhật lại DataGridView
+                    LoadDataEMP();
+                    // Thông báo
+                    MessageBox.Show("Đã xóa xong!");
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+                }
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!");
+            }
         }
+        #endregion
 
-        private void btnReloadEMP_Click(object sender, EventArgs e)
-        {
-            LoadDataEMP();
-        }
-
-        private void btnExitEMP_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult answear;
             answear = MessageBox.Show("are you sure?", "Trả lời",
@@ -227,9 +296,5 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             if (answear == DialogResult.OK)
                 Close();
         }
-
-        #endregion
-
-
     }
 }

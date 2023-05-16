@@ -56,7 +56,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 this.btnAdd.Enabled = true;
                 this.btnFix.Enabled = true;
                 this.btnDelete.Enabled = true;
-                this.btnBack.Enabled = true;
                 //
                 dgvMANUAFACTURE_CellClick(null, null);
             }
@@ -66,10 +65,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             }
         }
         private void FrmManuafacture_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-        private void btnReload_Click(object sender, EventArgs e)
         {
             LoadData();
         }
@@ -90,7 +85,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.btnAdd.Enabled = false;
             this.btnFix.Enabled = false;
             this.btnDelete.Enabled = false;
-            this.btnBack.Enabled = false;
             // Đưa con trỏ đến TextField txtmID
             this.txtmID.Focus();
         }
@@ -109,7 +103,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.btnAdd.Enabled = false;
             this.btnFix.Enabled = false;
             this.btnDelete.Enabled = false;
-            this.btnBack.Enabled = false;
             // Đưa con trỏ đến TextField txtMaKH
             this.txtmID.Enabled = false;
             this.txtmName.Focus();
@@ -126,16 +119,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.txtmLocation.Text =
             dgvMANUAFACTURE.Rows[r].Cells[2].Value.ToString();
         }
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            // Khai báo biến traloi
-            DialogResult traloi;
-            // Hiện hộp thoại hỏi đáp
-            traloi = MessageBox.Show("Chắc không?", "Trả lời",
-            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            // Kiểm tra có nhắp chọn nút Ok không?
-            if (traloi == DialogResult.OK) this.Close();
-        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // Xóa trống các đối tượng trong Panel
@@ -145,7 +128,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.btnAdd.Enabled = true;
             this.btnFix.Enabled = true;
             this.btnDelete.Enabled = true;
-            this.btnBack.Enabled = true;
             // Không cho thao tác trên các nút Lưu / Hủy / Panel
             this.btnSave.Enabled = false;
             this.btnCancel.Enabled = false;
@@ -154,8 +136,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Mở kết nối
-            // Thêm dữ liệu
             if (Them)
             {
                 try

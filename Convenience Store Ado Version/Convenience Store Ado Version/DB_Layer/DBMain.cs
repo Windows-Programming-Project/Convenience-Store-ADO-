@@ -5,12 +5,13 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Convenience_Store_Ado_Version.DB_Layer
 {
     class DBMain
     {
-        string ConnStr = "Data Source=DESKTOP-P5RFVBG;Initial Catalog=ConvenienceStore;Integrated Security=True";
+        string ConnStr = "Data Source=DESKTOP-P5RFVBG;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;
@@ -44,10 +45,11 @@ namespace Convenience_Store_Ado_Version.DB_Layer
             {
                 comm.ExecuteNonQuery();
                 f = true;
+                MessageBox.Show("Successfully!");
             }
             catch (SqlException ex)
             {
-                error = ex.Message;
+                MessageBox.Show("An error occurred: " + ex);
             }
             finally
             {

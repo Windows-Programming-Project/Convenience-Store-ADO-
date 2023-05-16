@@ -21,7 +21,7 @@ namespace Convenience_Store_Ado_Version.BS_Layer
         {
             return db.ExecuteQueryDataSet("select * from Employee", CommandType.Text);
         }
-        public bool AddEmployee(string EID, string EName, DateTime EDateOfBirth, int EGender,string EPhone,string EAddress,string EPosition,float ESalary, ref string err)
+        public bool AddEmployee(string EID, string EName, DateTime EDateOfBirth, int EGender,string EPhone,string EAddress,string EPosition,float ESalary,string EUsername,string EPassword, ref string err)
         {
             string sqlString = "Insert Into Employee Values(" + "N'" +
             EID + "',N'" +
@@ -31,11 +31,13 @@ namespace Convenience_Store_Ado_Version.BS_Layer
             EPhone + "',N'" +
             EAddress + "',N'" +
             EPosition + "','" +
-            ESalary +
+            ESalary + "','" +
+            EUsername + "','" +
+            EPassword +
             "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool UpdateEmployee(string EID, string EName, DateTime EDateOfBirth, int EGender, string EPhone, string EAddress, string EPosition, float ESalary, ref string err)
+        public bool UpdateEmployee(string EID, string EName, DateTime EDateOfBirth, int EGender, string EPhone, string EAddress, string EPosition, float ESalary, string EUsername, string EPassword, ref string err)
         {
             string sqlString = "UPDATE Employee SET " +
                                "eName = N'" + EName + "', " +
@@ -44,7 +46,9 @@ namespace Convenience_Store_Ado_Version.BS_Layer
                                "ePhone = N'" + EPhone + "', " +
                                "eAddress = N'" + EAddress + "', " +
                                "ePosition = N'" + EPosition + "', " +
-                               "eSalary = " + ESalary.ToString() + " " +
+                               "eSalary = N'" + ESalary.ToString() + "', " +
+                               "eUsername = N'" + EUsername + "', " +
+                               "ePassword = " + EPassword + " " +
                                "WHERE eID = N'" + EID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }

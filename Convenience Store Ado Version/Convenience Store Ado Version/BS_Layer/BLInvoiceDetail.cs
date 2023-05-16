@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Convenience_Store_Ado_Version.BS_Layer
 {
-    class BLDetail
+    class BLInvoiceDetail
     {
         DBMain db = null;
-        public BLDetail()
+        public BLInvoiceDetail()
         {
             db = new DBMain();
         }

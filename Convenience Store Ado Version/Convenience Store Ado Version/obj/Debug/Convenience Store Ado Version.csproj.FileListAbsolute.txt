@@ -12,7 +12,6 @@ D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience 
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmStock.resources
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmType.resources
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmSupplier.resources
-D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmDetail.resources
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmInvoice.resources
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmProduct.resources
 D:\UTE\year 2 hk2\Window programing\Final project\ADO Version\Windows-Programming-Project\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience Store Ado Version.csproj.AssemblyReference.cache
@@ -55,7 +54,11 @@ D:\ADO\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ad
 D:\ADO\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience Store Ado Version.csproj.CoreCompileInputs.cache
 D:\ADO\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience Store Ado Version.exe
 D:\ADO\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience Store Ado Version.pdb
-D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmAccount.resources
-D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmCustomer.resources
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmEmployee.resources
 D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.FrmMain.resources
+D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmLoyalCustomer.resources
+D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmEmployeeShift.resources
+D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmInvoiceDetail.resources
+D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmEmployeeLate.resources
+D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmRank.resources
+D:\FinalWindow\Convenience-Store-ADO-\Convenience Store Ado Version\Convenience Store Ado Version\obj\Debug\Convenience_Store_Ado_Version.DanhMuc.FrmShift.resources

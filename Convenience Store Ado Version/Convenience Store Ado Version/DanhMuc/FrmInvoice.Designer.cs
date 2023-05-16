@@ -43,10 +43,8 @@
             this.txtIDC = new System.Windows.Forms.TextBox();
             this.txtIDI = new System.Windows.Forms.TextBox();
             this.txtIDE = new System.Windows.Forms.TextBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnReload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvINVOICE)).BeginInit();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -219,19 +217,6 @@
             this.txtIDE.Size = new System.Drawing.Size(160, 39);
             this.txtIDE.TabIndex = 3;
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Teal;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(702, 173);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(70, 39);
-            this.btnBack.TabIndex = 92;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Teal;
@@ -258,19 +243,6 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnReload
-            // 
-            this.btnReload.BackColor = System.Drawing.Color.Teal;
-            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(702, 112);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(70, 39);
-            this.btnReload.TabIndex = 86;
-            this.btnReload.Text = "Reload";
-            this.btnReload.UseVisualStyleBackColor = false;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
             // FrmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,10 +254,8 @@
             this.Controls.Add(this.btnFix);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panel);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnReload);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmInvoice";
             this.Text = "FrmInvoice";
@@ -314,9 +284,7 @@
         private System.Windows.Forms.TextBox txtIDE;
         private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.Label lb2;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnReload;
     }
 }
