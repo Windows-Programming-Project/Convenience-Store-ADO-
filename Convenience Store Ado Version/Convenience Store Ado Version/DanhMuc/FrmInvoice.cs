@@ -58,7 +58,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 this.btnAdd.Enabled = true;
                 this.btnFix.Enabled = true;
                 this.btnDelete.Enabled = true;
-                this.btnBack.Enabled = true;
                 //
                 dgvINVOICE_CellClick(null, null);
             }
@@ -77,20 +76,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.txtIDC.Text = dgvINVOICE.Rows[r].Cells[2].Value.ToString();
             this.txtiDate.Text = dgvINVOICE.Rows[r].Cells[3].Value.ToString();
             this.txtiTotal.Text = dgvINVOICE.Rows[r].Cells[4].Value.ToString();
-        }
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            // Khai báo biến traloi
-            DialogResult traloi;
-            // Hiện hộp thoại hỏi đáp
-            traloi = MessageBox.Show("Chắc không?", "Trả lời",
-            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            // Kiểm tra có nhắp chọn nút Ok không?
-            if (traloi == DialogResult.OK) this.Close();
-        }
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            LoadData();
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -111,7 +96,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.btnAdd.Enabled = false;
             this.btnFix.Enabled = false;
             this.btnDelete.Enabled = false;
-            this.btnBack.Enabled = false;
             // Đưa con trỏ đến TextField txtbatchID
             this.txtIDI.Focus();
         }
@@ -130,7 +114,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.btnAdd.Enabled = false;
             this.btnFix.Enabled = false;
             this.btnDelete.Enabled = false;
-            this.btnBack.Enabled = false;
             // Đưa con trỏ đến TextField txtMaKH
             this.txtIDI.Enabled = false;
             this.txtiTotal.Focus();
@@ -145,7 +128,7 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 {
                     // Thực hiện lệnh
                     BLInvoice blIn = new BLInvoice();
-                    blIn.AddInvoice(this.txtIDI.Text, this.txtIDE.Text, this.txtIDC.Text, Convert.ToDateTime(this.txtiDate.Text), float.Parse(this.txtiTotal.Text), ref err);
+                    //blIn.AddInvoice(this.txtIDI.Text, this.txtIDE.Text, this.txtIDC.Text, Convert.ToDateTime(this.txtiDate.Text), float.Parse(this.txtiTotal.Text), ref err);
                     // Load lại dữ liệu trên DataGridView
                     LoadData();
                     // Thông báo
@@ -160,7 +143,7 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             {
                 // Thực hiện lệnh
                 BLInvoice blIn = new BLInvoice();
-                blIn.UpdateInvoice(this.txtIDI.Text, this.txtIDE.Text, this.txtIDC.Text, Convert.ToDateTime(this.txtiDate.Text), float.Parse(this.txtiTotal.Text), ref err);
+                //blIn.UpdateInvoice(this.txtIDI.Text, this.txtIDE.Text, this.txtIDC.Text, Convert.ToDateTime(this.txtiDate.Text), float.Parse(this.txtiTotal.Text), ref err);
 
                 // Load lại dữ liệu trên DataGridView
                 LoadData();
@@ -181,7 +164,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
             this.btnAdd.Enabled = true;
             this.btnFix.Enabled = true;
             this.btnDelete.Enabled = true;
-            this.btnBack.Enabled = true;
             // Không cho thao tác trên các nút Lưu / Hủy / Panel
             this.btnSave.Enabled = false;
             this.btnCancel.Enabled = false;
@@ -197,8 +179,6 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 int r = dgvINVOICE.CurrentCell.RowIndex;
                 // Lấy MaKH của record hiện hành
                 string strINV1 = dgvINVOICE.Rows[r].Cells[0].Value.ToString();
-                string strINV2 = dgvINVOICE.Rows[r].Cells[1].Value.ToString();
-                string strINV3 = dgvINVOICE.Rows[r].Cells[2].Value.ToString();
                 // Viết câu lệnh SQL
                 // Hiện thông báo xác nhận việc xóa mẫu tin
                 // Khai báo biến traloi
@@ -209,7 +189,7 @@ namespace Convenience_Store_Ado_Version.DanhMuc
                 // Kiểm tra có nhắp chọn nút Ok không?
                 if (traloi == DialogResult.Yes)
                 {
-                    dbPro.DeleteInvoice(ref err, strINV1, strINV2, strINV3);
+                    dbPro.DeleteInvoice(ref err, strINV1);
                     // Cập nhật lại DataGridView
                     LoadData();
                     // Thông báo

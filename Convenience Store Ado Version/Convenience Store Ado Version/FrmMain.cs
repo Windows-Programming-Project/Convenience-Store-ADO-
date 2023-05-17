@@ -28,26 +28,11 @@ namespace Convenience_Store_Ado_Version
             int y = (screenHeight - formHeight) / 2;
             this.Location = new Point(x, y);
         }
-        private void btnAccount_Click(object sender, EventArgs e)
-        {
-            FrmAccount frm = new FrmAccount();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-            foreach (Control control in this.Controls)
-            {
-                if (control.GetType() != typeof(Panel))
-                {
-                    this.Controls.Remove(control);
-                }
-            }
-            this.Controls.Add(frm); 
-            frm.Show();
-        }
+    
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            FrmCustomer frm = new FrmCustomer();
+            FrmLoyalCustomer frm = new FrmLoyalCustomer();
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
@@ -64,7 +49,7 @@ namespace Convenience_Store_Ado_Version
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            FrmDetail frm = new FrmDetail();
+            FrmInvoiceDetail frm = new FrmInvoiceDetail();
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;

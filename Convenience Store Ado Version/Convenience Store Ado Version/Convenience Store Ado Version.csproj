@@ -46,33 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BS_Layer\BLAccount.cs" />
-    <Compile Include="BS_Layer\BLCustomer.cs" />
-    <Compile Include="BS_Layer\BLDetail.cs" />
+    <Compile Include="BS_Layer\BLEmployeeLate.cs" />
+    <Compile Include="BS_Layer\BLEmployeeShift.cs" />
+    <Compile Include="BS_Layer\BLLoyalCustomer.cs" />
+    <Compile Include="BS_Layer\BLInvoiceDetail.cs" />
     <Compile Include="BS_Layer\BLEmployee.cs" />
     <Compile Include="BS_Layer\BLInvoice.cs" />
     <Compile Include="BS_Layer\BLManuafacture.cs" />
     <Compile Include="BS_Layer\BLProduct.cs" />
+    <Compile Include="BS_Layer\BLRank.cs" />
+    <Compile Include="BS_Layer\BLShift.cs" />
     <Compile Include="BS_Layer\BLStock.cs" />
     <Compile Include="BS_Layer\BLSupplier.cs" />
     <Compile Include="BS_Layer\BLType.cs" />
-    <Compile Include="DanhMuc\FrmAccount.cs">
+    <Compile Include="DanhMuc\FrmEmployeeLate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\FrmAccount.Designer.cs">
-      <DependentUpon>FrmAccount.cs</DependentUpon>
+    <Compile Include="DanhMuc\FrmEmployeeLate.Designer.cs">
+      <DependentUpon>FrmEmployeeLate.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\FrmCustomer.cs">
+    <Compile Include="DanhMuc\FrmEmployeeShift.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\FrmCustomer.Designer.cs">
-      <DependentUpon>FrmCustomer.cs</DependentUpon>
+    <Compile Include="DanhMuc\FrmEmployeeShift.Designer.cs">
+      <DependentUpon>FrmEmployeeShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\FrmDetail.cs">
+    <Compile Include="DanhMuc\FrmLoyalCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\FrmDetail.Designer.cs">
-      <DependentUpon>FrmDetail.cs</DependentUpon>
+    <Compile Include="DanhMuc\FrmLoyalCustomer.Designer.cs">
+      <DependentUpon>FrmLoyalCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\FrmInvoiceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FrmInvoiceDetail.Designer.cs">
+      <DependentUpon>FrmInvoiceDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\FrmEmployee.cs">
       <SubType>Form</SubType>
@@ -98,6 +107,12 @@
     <Compile Include="DanhMuc\FrmProduct.Designer.cs">
       <DependentUpon>FrmProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\FrmShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FrmShift.Designer.cs">
+      <DependentUpon>FrmShift.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\FrmStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +131,12 @@
     <Compile Include="DanhMuc\FrmType.Designer.cs">
       <DependentUpon>FrmType.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\FrmRank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FrmRank.Designer.cs">
+      <DependentUpon>FrmRank.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB_Layer\DBMain.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -125,14 +146,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DanhMuc\FrmAccount.resx">
-      <DependentUpon>FrmAccount.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\FrmEmployeeLate.resx">
+      <DependentUpon>FrmEmployeeLate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\FrmCustomer.resx">
-      <DependentUpon>FrmCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\FrmEmployeeShift.resx">
+      <DependentUpon>FrmEmployeeShift.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\FrmDetail.resx">
-      <DependentUpon>FrmDetail.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\FrmLoyalCustomer.resx">
+      <DependentUpon>FrmLoyalCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FrmInvoiceDetail.resx">
+      <DependentUpon>FrmInvoiceDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FrmEmployee.resx">
       <DependentUpon>FrmEmployee.cs</DependentUpon>
@@ -145,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FrmProduct.resx">
       <DependentUpon>FrmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FrmRank.resx">
+      <DependentUpon>FrmRank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FrmShift.resx">
+      <DependentUpon>FrmShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FrmStock.resx">
       <DependentUpon>FrmStock.cs</DependentUpon>
@@ -191,9 +221,6 @@
     <None Include="Resources\employee.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\homeStore.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Invoice.png" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +249,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\type.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shift.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

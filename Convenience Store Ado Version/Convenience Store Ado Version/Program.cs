@@ -17,14 +17,19 @@ namespace Convenience_Store_Ado_Version
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            //Application.Run(new FrmMain());
             //Application.Run(new FrmManuafacture());
             //Application.Run(new FrmStock());
             //Application.Run(new FrmType());
             // Application.Run(new FrmSupplier());
             //Application.Run(new FrmEmployee());
-            //Application.Run(new FrmCustomer());
+            //Application.Run(new FrmLoyalCustomer());
             //Application.Run(new FrmAccount());
+            //Application.Run(new FrmEmployeeShift());
+            //Application.Run(new FrmEmployeeLate());
+            //Application.Run(new FrmShift());
+            Application.Run(new FrmRank());
+
         }
     }
 }

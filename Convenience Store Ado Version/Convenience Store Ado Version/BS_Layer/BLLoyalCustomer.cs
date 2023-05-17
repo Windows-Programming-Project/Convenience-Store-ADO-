@@ -8,39 +8,39 @@ using System.Threading.Tasks;
 
 namespace Convenience_Store_Ado_Version.BS_Layer
 {
-     class BLCustomer
+     class BLLoyalCustomer
     {
         DBMain db = null;
-        public BLCustomer()
+        public BLLoyalCustomer()
         {
             db = new DBMain();
         }
         public DataSet TakeCustomer()
         {
-            return db.ExecuteQueryDataSet("select * from Customer", CommandType.Text);
+            return db.ExecuteQueryDataSet("select * from LoyalCustomer", CommandType.Text);
         }
-        public bool AddCustomer(string cID, string cName, float TotalPay,string cPhone,ref string err)
+        public bool AddCustomer(string cID, string cName,string cPhoneNum,string rName,ref string err)
         {
-            string sqlString = "Insert Into Customer Values(" + "N'" +
+            string sqlString = "Insert Into LoyalCustomer Values(" + "N'" +
             cID + "',N'" +
-            cName + "'," +
-            TotalPay + ",N'"+
-            cPhone + 
+            cName + "',NULL," +
+            cPhoneNum + ",N'" +
+            rName + 
             "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool UpdateCustomer(string cID, string cName, float TotalPay, string cPhone, ref string err)
+        public bool UpdateCustomer(string cID, string cName, string cPhoneNum,string rName, ref string err)
         {
-            string sqlString = "UPDATE Customer SET " +
+            string sqlString = "UPDATE LoyalCustomer SET " +
                                "cName = N'" + cName + "', " +
-                               "cTotalpay = " +TotalPay + ", " +
-                               "cPhoneNum = N'" + cPhone + "' " +
+                               "cPhoneNum = N'" + cPhoneNum + "', " +
+                               "rName = N'" + rName + "' " +
                                "WHERE cID = N'" + cID + "';";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool DeleteCustomer(string cID, ref string err)
         {
-            string sqlString = "DELETE FROM Customer WHERE cID = N'" + cID + "'";
+            string sqlString = "DELETE FROM LoyalCustomer WHERE cID = N'" + cID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 

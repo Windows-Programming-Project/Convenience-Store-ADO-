@@ -1,6 +1,6 @@
 ﻿namespace Convenience_Store_Ado_Version.DanhMuc
 {
-    partial class FrmDetail
+    partial class FrmInvoiceDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -41,10 +41,8 @@
             this.txtdAmount = new System.Windows.Forms.TextBox();
             this.txtIDI = new System.Windows.Forms.TextBox();
             this.txtIDP = new System.Windows.Forms.TextBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnReload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDETAIL)).BeginInit();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -199,19 +197,6 @@
             this.txtIDP.Size = new System.Drawing.Size(215, 38);
             this.txtIDP.TabIndex = 3;
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Teal;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(578, 107);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(83, 42);
-            this.btnBack.TabIndex = 119;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Teal;
@@ -238,20 +223,7 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnReload
-            // 
-            this.btnReload.BackColor = System.Drawing.Color.Teal;
-            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(578, 165);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(83, 40);
-            this.btnReload.TabIndex = 113;
-            this.btnReload.Text = "Reload";
-            this.btnReload.UseVisualStyleBackColor = false;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // FrmDetail
+            // FrmInvoiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -262,12 +234,10 @@
             this.Controls.Add(this.btnFix);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panel);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnReload);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FrmDetail";
+            this.Name = "FrmInvoiceDetail";
             this.Text = "FrmDetail";
             this.Load += new System.EventHandler(this.FrmDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDETAIL)).EndInit();
@@ -292,9 +262,7 @@
         private System.Windows.Forms.TextBox txtIDI;
         private System.Windows.Forms.TextBox txtIDP;
         private System.Windows.Forms.Label lb1;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnReload;
     }
 }

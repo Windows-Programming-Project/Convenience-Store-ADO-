@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbIDEmp = new System.Windows.Forms.Label();
             this.txtIDEmployee = new System.Windows.Forms.TextBox();
             this.dgvEMPLOYEE = new System.Windows.Forms.DataGridView();
@@ -46,15 +46,19 @@
             this.txtDateofBirthEMP = new System.Windows.Forms.TextBox();
             this.txtPhoneEMP = new System.Windows.Forms.TextBox();
             this.txtNameEMP = new System.Windows.Forms.TextBox();
-            this.btnAddEMP = new System.Windows.Forms.Button();
-            this.btnChanged = new System.Windows.Forms.Button();
-            this.btnDeleteEMP = new System.Windows.Forms.Button();
-            this.btSaveEMP = new System.Windows.Forms.Button();
-            this.btnReloadEMP = new System.Windows.Forms.Button();
-            this.btnExitEMP = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.panel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEMPLOYEE)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbIDEmp
@@ -84,14 +88,14 @@
             this.dgvEMPLOYEE.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEMPLOYEE.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEMPLOYEE.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEMPLOYEE.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEMPLOYEE.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEMPLOYEE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEMPLOYEE.Location = new System.Drawing.Point(228, 369);
             this.dgvEMPLOYEE.Margin = new System.Windows.Forms.Padding(2);
@@ -100,7 +104,7 @@
             this.dgvEMPLOYEE.RowTemplate.Height = 24;
             this.dgvEMPLOYEE.Size = new System.Drawing.Size(1028, 209);
             this.dgvEMPLOYEE.TabIndex = 2;
-            this.dgvEMPLOYEE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEMPLOYEE_CellContentClick);
+            this.dgvEMPLOYEE.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEMPLOYEE_CellClick);
             // 
             // lbSalaryEMP
             // 
@@ -256,113 +260,161 @@
             this.txtNameEMP.Size = new System.Drawing.Size(196, 38);
             this.txtNameEMP.TabIndex = 1;
             // 
-            // btnAddEMP
+            // btnAdd
             // 
-            this.btnAddEMP.BackColor = System.Drawing.Color.Teal;
-            this.btnAddEMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEMP.ForeColor = System.Drawing.Color.White;
-            this.btnAddEMP.Location = new System.Drawing.Point(753, 78);
-            this.btnAddEMP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddEMP.Name = "btnAddEMP";
-            this.btnAddEMP.Size = new System.Drawing.Size(95, 41);
-            this.btnAddEMP.TabIndex = 4;
-            this.btnAddEMP.Text = "Add";
-            this.btnAddEMP.UseVisualStyleBackColor = false;
-            this.btnAddEMP.Click += new System.EventHandler(this.btnAddEMP_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.Teal;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(960, 78);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(95, 41);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnChanged
+            // btnUpdate
             // 
-            this.btnChanged.BackColor = System.Drawing.Color.Teal;
-            this.btnChanged.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChanged.ForeColor = System.Drawing.Color.White;
-            this.btnChanged.Location = new System.Drawing.Point(753, 123);
-            this.btnChanged.Margin = new System.Windows.Forms.Padding(2);
-            this.btnChanged.Name = "btnChanged";
-            this.btnChanged.Size = new System.Drawing.Size(95, 41);
-            this.btnChanged.TabIndex = 4;
-            this.btnChanged.Text = "Change";
-            this.btnChanged.UseVisualStyleBackColor = false;
-            this.btnChanged.Click += new System.EventHandler(this.btnChanged_Click);
+            this.btnUpdate.BackColor = System.Drawing.Color.Teal;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(960, 123);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(95, 41);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
-            // btnDeleteEMP
+            // btnDelete
             // 
-            this.btnDeleteEMP.BackColor = System.Drawing.Color.Teal;
-            this.btnDeleteEMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteEMP.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteEMP.Location = new System.Drawing.Point(753, 258);
-            this.btnDeleteEMP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeleteEMP.Name = "btnDeleteEMP";
-            this.btnDeleteEMP.Size = new System.Drawing.Size(95, 41);
-            this.btnDeleteEMP.TabIndex = 4;
-            this.btnDeleteEMP.Text = "Delete";
-            this.btnDeleteEMP.UseVisualStyleBackColor = false;
-            this.btnDeleteEMP.Click += new System.EventHandler(this.btnDeleteEMP_Click);
+            this.btnDelete.BackColor = System.Drawing.Color.Teal;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(960, 226);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(95, 41);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btSaveEMP
+            // btnSave
             // 
-            this.btSaveEMP.BackColor = System.Drawing.Color.Teal;
-            this.btSaveEMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSaveEMP.ForeColor = System.Drawing.Color.White;
-            this.btSaveEMP.Location = new System.Drawing.Point(753, 168);
-            this.btSaveEMP.Margin = new System.Windows.Forms.Padding(2);
-            this.btSaveEMP.Name = "btSaveEMP";
-            this.btSaveEMP.Size = new System.Drawing.Size(95, 41);
-            this.btSaveEMP.TabIndex = 4;
-            this.btSaveEMP.Text = "Save";
-            this.btSaveEMP.UseVisualStyleBackColor = false;
-            this.btSaveEMP.Click += new System.EventHandler(this.btSaveEMP_Click);
+            this.btnSave.BackColor = System.Drawing.Color.Teal;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(960, 174);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(95, 41);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnReloadEMP
+            // btnExit
             // 
-            this.btnReloadEMP.BackColor = System.Drawing.Color.Teal;
-            this.btnReloadEMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReloadEMP.ForeColor = System.Drawing.Color.White;
-            this.btnReloadEMP.Location = new System.Drawing.Point(753, 213);
-            this.btnReloadEMP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReloadEMP.Name = "btnReloadEMP";
-            this.btnReloadEMP.Size = new System.Drawing.Size(95, 41);
-            this.btnReloadEMP.TabIndex = 4;
-            this.btnReloadEMP.Text = "Reload";
-            this.btnReloadEMP.UseVisualStyleBackColor = false;
-            this.btnReloadEMP.Click += new System.EventHandler(this.btnReloadEMP_Click);
+            this.btnExit.BackColor = System.Drawing.Color.Teal;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(960, 320);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 41);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnExitEMP
+            // panel
             // 
-            this.btnExitEMP.BackColor = System.Drawing.Color.Teal;
-            this.btnExitEMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExitEMP.ForeColor = System.Drawing.Color.White;
-            this.btnExitEMP.Location = new System.Drawing.Point(753, 303);
-            this.btnExitEMP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExitEMP.Name = "btnExitEMP";
-            this.btnExitEMP.Size = new System.Drawing.Size(95, 41);
-            this.btnExitEMP.TabIndex = 4;
-            this.btnExitEMP.Text = "Exit";
-            this.btnExitEMP.UseVisualStyleBackColor = false;
-            this.btnExitEMP.Click += new System.EventHandler(this.btnExitEMP_Click);
+            this.panel.BackColor = System.Drawing.Color.Teal;
+            this.panel.Controls.Add(this.label1);
+            this.panel.Controls.Add(this.label2);
+            this.panel.Controls.Add(this.txtUsername);
+            this.panel.Controls.Add(this.txtPassword);
+            this.panel.Controls.Add(this.lbDateOfBirthEMP);
+            this.panel.Controls.Add(this.lbSalaryEMP);
+            this.panel.Controls.Add(this.lbGenderEMP);
+            this.panel.Controls.Add(this.lbPostitionEMP);
+            this.panel.Controls.Add(this.lbIDEmp);
+            this.panel.Controls.Add(this.lbAddEMP);
+            this.panel.Controls.Add(this.lbPhoneEMP);
+            this.panel.Controls.Add(this.blNameEMP);
+            this.panel.Controls.Add(this.txtNameEMP);
+            this.panel.Controls.Add(this.txtDateofBirthEMP);
+            this.panel.Controls.Add(this.txtPhoneEMP);
+            this.panel.Controls.Add(this.txtAddEMP);
+            this.panel.Controls.Add(this.txtIDEmployee);
+            this.panel.Controls.Add(this.txtPosition);
+            this.panel.Controls.Add(this.txtGenderEMP);
+            this.panel.Controls.Add(this.txtSalaryEMP);
+            this.panel.Location = new System.Drawing.Point(228, 74);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(683, 287);
+            this.panel.TabIndex = 5;
             // 
-            // panel1
+            // label1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.lbDateOfBirthEMP);
-            this.panel1.Controls.Add(this.lbSalaryEMP);
-            this.panel1.Controls.Add(this.lbGenderEMP);
-            this.panel1.Controls.Add(this.lbPostitionEMP);
-            this.panel1.Controls.Add(this.lbIDEmp);
-            this.panel1.Controls.Add(this.lbAddEMP);
-            this.panel1.Controls.Add(this.lbPhoneEMP);
-            this.panel1.Controls.Add(this.blNameEMP);
-            this.panel1.Controls.Add(this.txtNameEMP);
-            this.panel1.Controls.Add(this.txtDateofBirthEMP);
-            this.panel1.Controls.Add(this.txtPhoneEMP);
-            this.panel1.Controls.Add(this.txtAddEMP);
-            this.panel1.Controls.Add(this.txtIDEmployee);
-            this.panel1.Controls.Add(this.txtPosition);
-            this.panel1.Controls.Add(this.txtGenderEMP);
-            this.panel1.Controls.Add(this.txtSalaryEMP);
-            this.panel1.Location = new System.Drawing.Point(228, 57);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(507, 287);
-            this.panel1.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(536, 187);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Password";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(536, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Username";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(472, 81);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsername.Multiline = true;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(196, 44);
+            this.txtUsername.TabIndex = 4;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(472, 150);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(196, 41);
+            this.txtPassword.TabIndex = 5;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Teal;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(960, 271);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(95, 41);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FrmEmployee
             // 
@@ -370,21 +422,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1148, 529);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnReloadEMP);
-            this.Controls.Add(this.btSaveEMP);
-            this.Controls.Add(this.btnDeleteEMP);
-            this.Controls.Add(this.btnExitEMP);
-            this.Controls.Add(this.btnChanged);
-            this.Controls.Add(this.btnAddEMP);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.panel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvEMPLOYEE);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmEmployee";
             this.Text = "FrmEmployee";
             this.Load += new System.EventHandler(this.FrmEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEMPLOYEE)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -408,12 +460,16 @@
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtAddEMP;
         private System.Windows.Forms.TextBox txtPhoneEMP;
-        private System.Windows.Forms.Button btnAddEMP;
-        private System.Windows.Forms.Button btnChanged;
-        private System.Windows.Forms.Button btnDeleteEMP;
-        private System.Windows.Forms.Button btSaveEMP;
-        private System.Windows.Forms.Button btnReloadEMP;
-        private System.Windows.Forms.Button btnExitEMP;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

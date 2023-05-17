@@ -20,25 +20,26 @@ namespace Convenience_Store_Ado_Version.BS_Layer
         {
             return db.ExecuteQueryDataSet("select * from Invoice", CommandType.Text);
         }
-        public bool AddInvoice(string IDI, string IDE, string IDC, DateTime iDate, float iTotal, ref string err)
+        public bool AddInvoice(string IDI, string IDE, string IDC, DateTime iDate, float iTotalpay,float iFinalTotalpay, ref string err)
         {
             string sqlString = "Insert Into Invoice Values(" + "'" +
             IDI + "',N'" +
             IDE + "',N'" +
             IDC + "',N'" +
             iDate+ "',N'" +
-            iTotal+"')";
+            iTotalpay + "',N'" +
+            iFinalTotalpay +"')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool DeleteInvoice(ref string err, string IDI, string IDE, string IDC)
+        public bool DeleteInvoice(ref string err, string IDI)
         {
-            string sqlString = "Delete From Invoice Where iID=N'" + IDI + "' AND eID=N'"+IDE+"' AND cID=N'"+IDC+"'";
+            string sqlString = "Delete From Invoice Where iID=N'" + IDI +"'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool UpdateInvoice(string IDI, string IDE, string IDC, DateTime iDate, float iTotal, ref string err)
+        public bool UpdateInvoice(string IDI, string IDE, string IDC, DateTime iDate, float iTotalpay,float iFinalTotalpay, ref string err)
         {
-            string sqlString = "Update Invoice Set iDate='" + iDate +
-            "', iTotalpay='" + iTotal + "', eID=N'" + IDE + "', cID=N'" + IDC +
+            string sqlString = "Update Invoice Set eID='" + IDE +
+            "', cID='" + IDC + "', iDate=N'" + iDate + "', iTotalPay=N'" + iTotalpay + "', iFinalTotalpay=N'" + iFinalTotalpay +
                "' Where iID=N'" + IDI + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
